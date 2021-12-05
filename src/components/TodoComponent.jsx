@@ -75,7 +75,7 @@ export default function TodoComponent(props) {
           </React.Fragment>
         )}
       </div>
-      <section>
+      <section className="editbutton">
         <button onClick={onDeleteFunction}>Delete</button>
         <button onClick={setUpdate}>Update</button>
       </section>

@@ -9,3 +9,10 @@
   border-radius: 10px;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 768px) {
+  .editbutton {
+    display: flex;
+    flex-direction: column;
+  }
+}
