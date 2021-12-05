@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import "./App.css";
 import TodoComponent from "./components/TodoComponent";
 import TodoForm from "./components/TodoForm";
-import "./App.css";
 
 function App() {
   /**
    * Stores todo list
    */
   const [todoList, setTodoList] = useState([
-    // saves todo list state
+    // Saves todo list state
     {
+      // Initial state
       title: "Placeholder",
       description: "No Description",
     },
@@ -17,6 +18,7 @@ function App() {
 
   // Handle add new todo
   function handleAddNewTodo(newTodo) {
+    // Validate if user has added title
     if (newTodo.title != null && newTodo.title !== "") {
       // Add new todo to the list
       setTodoList([...todoList, newTodo]);
@@ -62,7 +64,7 @@ function App() {
           <strong>Add new todo</strong>
         </h3>
       )}
-      <TodoForm onAddNewTodo={handleAddNewTodo} />
+      <TodoForm handleAddNewTodo={handleAddNewTodo} />
     </div>
   );
 }

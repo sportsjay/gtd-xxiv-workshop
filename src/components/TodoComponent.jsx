@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./TodoComponent.css";
 
 export default function TodoComponent(props) {
-  // Get props
+  // Get propertiess
   const idx = props.idx;
   const title = props.title;
   const description = props.description;
   const onDeleteFunction = props.onDeleteFunction;
   const onUpdateFunction = props.onUpdateFunction;
 
+  // Initialize States
   const [todoData, setTodoData] = useState({
     newTitle: title,
     newDescription: description,
@@ -16,13 +17,17 @@ export default function TodoComponent(props) {
 
   const [isUpdating, setIsUpdating] = useState(false);
 
-  useEffect(() => {}, [title, description]);
+  // Render on update
+  useEffect(() => {}, [props.title, props.description]);
 
   // Set update mode
   function setUpdate() {
     setIsUpdating(!isUpdating);
   }
 
+  /**
+   * Handle Todo updates
+   */
   // Handle title changes
   function onChangeTitle(e) {
     setTodoData({
@@ -45,6 +50,7 @@ export default function TodoComponent(props) {
       title: todoData.newTitle,
       description: todoData.newDescription,
     };
+    // calls update function from parent component -> <App />
     onUpdateFunction(idx, newData);
     setUpdate();
   }
@@ -54,8 +60,8 @@ export default function TodoComponent(props) {
       <div>
         {!isUpdating ? (
           <React.Fragment>
-            <strong>{todoData.newTitle}</strong>
-            <p>{todoData.newDescription}</p>
+            <strong>{title}</strong>
+            <p>{description}</p>
           </React.Fragment>
         ) : (
           <React.Fragment>
