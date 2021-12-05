@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoComponent from "./components/TodoComponent";
 import TodoForm from "./components/TodoForm";
+import "./App.css";
 
 function App() {
   /**
@@ -42,9 +43,9 @@ function App() {
   }
 
   return (
-    <div style={{ minHeight: "100vh", width: "100vw" }}>
+    <div className="container">
       {/* APP TITLE */}
-      <h1>Todo List</h1>
+      <h1 className="title">Todo List</h1>
       {todoList.length >= 1 ? (
         todoList.map((todo, idx) => (
           <TodoComponent

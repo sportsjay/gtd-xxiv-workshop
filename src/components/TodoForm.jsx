@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./TodoForm.css";
 
 export default class TodoForm extends Component {
   constructor(props) {
@@ -44,7 +45,8 @@ export default class TodoForm extends Component {
 
   render() {
     return (
-      <div style={{ width: 400, height: "max-content", padding: 20 }}>
+      <div className="form">
+        <h2 style={{ textAlign: "center", margin: 0 }}>Input Form</h2>
         <label>Todo title</label>
         <input
           type="text"

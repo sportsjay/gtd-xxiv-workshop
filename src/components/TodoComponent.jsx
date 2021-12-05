@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./TodoComponent.css";
 
 export default function TodoComponent(props) {
   // Get props
@@ -49,18 +50,8 @@ export default function TodoComponent(props) {
   }
 
   return (
-    <div
-      style={{
-        margin: 10,
-        padding: 10,
-        width: "50%",
-        height: "max-content",
-        display: "flex",
-        flexDirection: "row",
-        backgroundColor: "lightgreen",
-      }}
-    >
-      <div style={{ width: "70%" }}>
+    <div className="list">
+      <div>
         {!isUpdating ? (
           <React.Fragment>
             <strong>{todoData.newTitle}</strong>
@@ -84,7 +75,7 @@ export default function TodoComponent(props) {
           </React.Fragment>
         )}
       </div>
-      <section style={{ width: "30%" }}>
+      <section>
         <button onClick={onDeleteFunction}>Delete</button>
         <button onClick={setUpdate}>Update</button>
       </section>
